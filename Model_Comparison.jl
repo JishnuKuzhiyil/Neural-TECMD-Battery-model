@@ -104,7 +104,7 @@ Pkg.instantiate()
     """OCV function approximation"""   #this is the polynomial approximation of OCV as function of SOC
     @inline function OCV_LGM50_full_cell(SOC) # SOC ∈ [0,100] #OCP function
             
-        if SOC < -2.5 #below 4% SOC a flat extrapolation is used.
+        if SOC < -2.5 #below 2.5% SOC a flat extrapolation is used.
             SOC = -2.5
         end 
         OCV =@.(3.132620508717038 + 0.03254176983890392*SOC - 0.003901708378797115*SOC^2 + 
